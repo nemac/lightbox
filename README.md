@@ -26,16 +26,24 @@ displayed.
 > Determines if the conent of the lightbox is fitted to the screen, while preserving
 > the aspect ratio of the content.
 >
-> A value of **true** will cause the content of the lightbox to be scaled, the value
-> defaults to **false**
+> A value of **true** causes the content of the lightbox to be scaled, the value defaults
+> to **false**.
 
 * fullscreen
 
 > Determines if the content of the lightbox is fitted to the screen, overrides the
 > value of *scale*.
 >
-> A value of **true** will cause the content of the lightbox to be fullscreen, the value
-> defaults to **false**
+> A value of **true** causes the content of the lightbox to be fullscreen, the value
+> defaults to **false**.
+
+* defaultEventHandling
+
+> Determines if the default event handlers are bound, namely that the lightbox will
+> toggle on a doubletap.
+>
+> A value of **true** causes the default event handlers to be bound, the value defaults
+> to **true**.
 
 To specify a value for an option you pass an object to the initial setup method with the
 name of the option as a key-value pair, like this:
