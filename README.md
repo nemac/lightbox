@@ -32,11 +32,20 @@ displayed.
 * fullscreen
 
 > Determines if the content of the lightbox is fitted to the screen, overrides the
-> value of **scale**.
+> value of *scale*.
 >
 > A value of **true** will cause the content of the lightbox to be fullscreen, the value
 > defaults to **false**
 
+To specify a value for an option you include the name of the option as a key-value pair
+in an object in the initial setup like this:
+
+```javascript
+$("selector").lightbox({
+    fullscreen : false,
+    scale : true
+});
+```
 
 ## callbacks
 
@@ -53,13 +62,47 @@ The names of the callbacks are as follows:
 * preclose
 * postclose
 
+Defining the callbacks is done in the same manner as the options, like this:
+
+```javascript
+$("selector").lightbox({
+    fullscreen : true,
+    preopen : function () {
+        console.log("preopen");
+    },
+    postopen : function () {
+        console.log("postopen");
+    },
+    preclose : function () {
+        console.log("preclose");
+    },
+    postclose : function () {
+        console.log("postclose");
+    },
+    preclose : function () {
+        console.log("preclose");
+    },
+    postclose : function () {
+        console.log("postclose");
+    }
+});
+```
+
 Within the callbacks you can store and retrieve data by attaching it to the target's
 lightbox data object like this:
 
 ```javascript
-this.data("lightbox").foo = "foo";
-this.data("lightbox").bar = "bar";
-console.log(this.data("lightbox").foo + this.data("lightbox").bar);
+$("selector").lightbox({
+    preopen : function () {
+        console.log(this.data("lightbox").foo); // undefined
+        console.log(this.data("lightbox").bar); // undefined
+        this.data("lightbox").foo = "foo";
+        this.data("lightbox").bar = "bar";
+    },
+    postopen : function () {
+        console.log(this.data("lightbox").foo + this.data("lightbox").bar); // "foobar"
+    }
+});
 ```
 
 ## reserved words
@@ -69,10 +112,10 @@ and so they should not be modified in any custom callbacks you define. In additi
 following properties are also used by the plugin, and should not be modified by any
 callbacks.
 
-* opened -- Boolean that determines if the lightbox is open
-* overlay -- HTMLDOMElement, the grey background
-* box -- HTMLDOMElement, div that contains the **contents** and a button to close it
-* contents -- HTMLDOMElement, copy of the original target element
-* contentWidth -- Number that stores the width of **contents**
-* contentHeight -- Number that stores the height of **contents**
-* resizeHandler -- Function bound to the window that calls the resize method when needed
+* opened -- **Boolean** that determines if the lightbox is open
+* overlay -- **HTMLDOMElement**, the grey background
+* box -- **HTMLDOMElement**, div that contains the *contents* and a button to close it
+* contents -- **HTMLDOMElement**, copy of the original target element
+* contentWidth -- **Number** that stores the width of *contents*
+* contentHeight -- **Number** that stores the height of *contents*
+* resizeHandler -- **Function** bound to the window that calls the resize method when needed
