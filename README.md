@@ -37,8 +37,8 @@ displayed.
 > A value of **true** will cause the content of the lightbox to be fullscreen, the value
 > defaults to **false**
 
-To specify a value for an option you include the name of the option as a key-value pair
-in an object in the initial setup like this:
+To specify a value for an option you pass an object to the initial setup method with the
+name of the option as a key-value pair, like this:
 
 ```javascript
 $("selector").lightbox({
@@ -50,8 +50,11 @@ $("selector").lightbox({
 ## callbacks
 
 This plugin lets you define callbacks that are fired before and after the lightbox is
-opened, closed and resized; in each of these callbacks the value of `this` is a copy
-of the **HTMLDOMElement** targeted by your `$("selector")`.
+opened, closed and resized. In the *close* and *resize* callbacks the value of `this` is
+the copy of the **HTMLDOMElement** targeted by your `$("selector")` that is displayed in
+the lightbox, but in the *open* callbacks the value of `this` is the original
+**HTMLDOMElement** targeted by your `$("selector")` and the copy can be accessed through
+`this.data("lightbox").contents`.
 
 The names of the callbacks are as follows:
 
