@@ -23,6 +23,7 @@
             var cloneData = clone.data("lightbox");
 
             data.overlay = $("<div style=\"position: fixed; left: 0px; top: 0px; height: 100%; min-height: 100%; width: 100%; z-index: 9999; background: black; opacity: 0.5;\"></div>").appendTo("body");
+            $("body").append(clone);
 
             if (data.fullscreen === true) {
                 w = window.innerWidth;
@@ -40,7 +41,6 @@
             scaleElement(clone, w, h);
             positionElement(clone, w, h);
 
-            $("body").append(clone);
 
             clone.css("position", "fixed")
                 .css("z-index", 9999);
