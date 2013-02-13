@@ -13,9 +13,9 @@
 
     var methods = {
         open : function () {
-            var clone = this.clone(true);
-            var data = this.data("lightbox");
-            var w, h;
+            var clone = this.clone(true),
+                data = this.data("lightbox"),
+                w, h;
 
             data.contents = clone;
             data.preopen.call(this);
@@ -116,8 +116,8 @@
         },
                 
         resize : function () {
-            var data = this.data("lightbox");
-            var w, h;
+            var data = this.data("lightbox"),
+                w, h;
 
             data.preresize.call(this);
 
@@ -200,9 +200,9 @@
     };
 
     var computeRatio = function (originalWidth, originalHeight) {
-        var wr = (originalWidth > 0) ? window.innerWidth / originalWidth : 1;
-        var hr = (originalHeight > 0) ? window.innerHeight / originalHeight : 1;
-        var r = Math.min(wr, hr);
+        var wr = (originalWidth > 0) ? window.innerWidth / originalWidth : 1,
+            hr = (originalHeight > 0) ? window.innerHeight / originalHeight : 1,
+            r = Math.min(wr, hr);
         return r;
     };
 
@@ -212,8 +212,8 @@
     };
 
     var positionElement = function (elem, width, height) {
-        var left = (window.innerWidth  - width) / 2;
-        var top = (window.innerHeight - height) / 2;
+        var left = (window.innerWidth  - width) / 2,
+            top = (window.innerHeight - height) / 2;
         if (left < 0) {
             left = 0;
         }
