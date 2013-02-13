@@ -51,7 +51,7 @@ $("selector").lightbox({
 
 This plugin lets you define callbacks that are fired before and after the lightbox is
 opened, closed and resized; in each of these callbacks the value of `this` is a copy
-of the HTMLDOMElement targeted by your `$("selector")`.
+of the **HTMLDOMElement** targeted by your `$("selector")`.
 
 The names of the callbacks are as follows:
 
@@ -113,8 +113,8 @@ following properties are also used by the plugin, and should not be modified by 
 callbacks.
 
 * opened -- **Boolean** that determines if the lightbox is open
-* overlay -- **HTMLDOMElement**, the grey background
-* box -- **HTMLDOMElement**, div that contains the *contents* and a button to close it
+* overlay -- **HTMLDOMElement**, div that is the grey background
+* box -- **HTMLDOMElement**, div that contains the *contents* and a button to close the lightbox
 * contents -- **HTMLDOMElement**, copy of the original target element
 * contentWidth -- **Number** that stores the width of *contents*
 * contentHeight -- **Number** that stores the height of *contents*
