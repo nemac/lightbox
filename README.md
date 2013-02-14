@@ -70,8 +70,8 @@ The names of the callbacks are as follows:
 * postopen
 * preclose
 * postclose
-* preclose
-* postclose
+* preresize
+* postresize
 
 Defining the callbacks is done in the same manner as the options, like this:
 
@@ -90,11 +90,11 @@ $("selector").lightbox({
     postclose : function () {
         console.log("postclose");
     },
-    preclose : function () {
-        console.log("preclose");
+    preresize : function () {
+        console.log("preresize");
     },
-    postclose : function () {
-        console.log("postclose");
+    postresize : function () {
+        console.log("postresize");
     }
 });
 ```
